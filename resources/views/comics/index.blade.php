@@ -2,7 +2,7 @@
 
 @section("content")
 
-    <div class="container">
+    <div class="container my-5 ">
         <h1>Lista Fumetti</h1>
         <table class="table">
             <thead>
@@ -21,7 +21,9 @@
                         <td>{{ $item->price }}</td>
                         <td>{{ $item->series }}</td>
                         <td>{{ $item->type }}</td>
-                        <td>X</td>
+                        <td><a href="{{ route("comics.show", ($item->id)) }}">Info</a></td>
+                        <td><button type="button" class="btn btn-warning" href=""><i class="fa-solid fa-pencil"></i></button></td>
+                        <td><button type="button" class="btn btn-danger" href=""><i class="fa-solid fa-ban"></i></button></td>
                     </tr>
                 @endforeach
 
