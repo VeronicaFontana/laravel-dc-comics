@@ -22,7 +22,7 @@
                         <td>{{ $item->series }}</td>
                         <td>{{ $item->type }}</td>
                         <td><a href="{{ route("comics.show", ($item->id)) }}">Info</a></td>
-                        <td><button type="button" class="btn btn-warning" href=""><i class="fa-solid fa-pencil"></i></button></td>
+                        <td><a href="{{ route("comics.edit", ($item->id)) }}">Modifica</a></td>
                         <td><button type="button" class="btn btn-danger" href=""><i class="fa-solid fa-ban"></i></button></td>
                     </tr>
                 @endforeach
