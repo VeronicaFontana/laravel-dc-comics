@@ -2,8 +2,8 @@
 
 @section("content")
 
-    <div class="container my-5 ">
-        <h1>Lista Fumetti</h1>
+    <div class="container my-5">
+        <h1 class="text-center">Lista Fumetti</h1>
         <table class="table">
             <thead>
                 <tr>
@@ -21,9 +21,11 @@
                         <td>{{ $item->price }}</td>
                         <td>{{ $item->series }}</td>
                         <td>{{ $item->type }}</td>
-                        <td><a href="{{ route("comics.show", ($item->id)) }}">Info</a></td>
-                        <td><a href="{{ route("comics.edit", ($item->id)) }}">Modifica</a></td>
-                        <td><button type="button" class="btn btn-danger" href=""><i class="fa-solid fa-ban"></i></button></td>
+                        <td>
+                            <a href="{{ route("comics.show", $item) }}" class="btn btn-success"><i class="fa-solid fa-circle-info"></i></a>
+                            <a href="{{ route("comics.edit", $item) }}" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
+                            @include("partials.formDelete")
+                        </td>
                     </tr>
                 @endforeach
 

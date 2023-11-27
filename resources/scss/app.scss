@@ -1,3 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
 
 @import "./show";
+@import "./header";
+@import "./home";
+
+body{
+    background-color: lightblue;
+}
