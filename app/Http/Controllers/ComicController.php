@@ -25,7 +25,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view("comics.create");
     }
 
     /**
@@ -36,7 +36,15 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->except('_token');
+
+        $new_comic = new Comic();
+        $new_comic["slug"] = Comic::generateSlug($form_data["title"]);
+		$new_comic->fill($form_data);
+
+		$new_comic->save();
+
+        return redirect()->route("comics.show", $new_comic);
     }
 
     /**
